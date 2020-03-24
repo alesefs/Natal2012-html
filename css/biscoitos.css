@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#biscoitos
+{
+position:absolute;
+left:115px;
+top:360px;
+z-index:2;
+}
+
+#btn_dir_biscoitos
+{
+position:absolute;
+left:165px;
+top:370px;
+z-index:2;
+}
+
+#btn_esq_biscoitos
+{
+position:absolute;
+left:80px;
+top:370px;
+z-index:2;
+}
+
+#biscoitosarvore
+{
+position:absolute;
+left:270px;
+top:70px;
+z-index:2;
+}

@@ -1,0 +1,271 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- meta tags -->
+<meta charset="utf-8">
+<title>APP de Natal 2012 - echo estudio games</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<!-- hackers IE -->
+	<meta http-equiv="X-UA-Compatible" content="IE=9"/> 
+	<!--[if lte IE 8]>
+	<script src="html5.js" type="text/javascript"></script>
+	<![endif]-->
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+    <script> 
+    function hideAddressBar(){
+      if(document.documentElement.scrollHeight<window.outerHeight/window.devicePixelRatio)
+        document.documentElement.style.height=(window.outerHeight/window.devicePixelRatio)+'px';
+      setTimeout(window.scrollTo(1,1),0);
+    }
+    window.addEventListener("load",function(){hideAddressBar();});
+    window.addEventListener("orientationchange",function(){hideAddressBar();});
+    </script>
+
+	<style type="text/css">
+	body { margin: 0; padding: 0; background: #000;}
+	canvas { display: block; margin: 0 auto; background: #fff; }
+
+	</style>
+
+<!-- javascript -->
+<script src="js/audio.js" type="text/javascript"></script>
+<script src="js/bolas.js" type="text/javascript"></script>
+<script src="js/estrelas.js" type="text/javascript"></script>
+<script src="js/sinos.js" type="text/javascript"></script>
+<script src="js/lacos.js" type="text/javascript"></script>
+<script src="js/biscoitos.js" type="text/javascript"></script>
+<script src="js/gorros_meias.js" type="text/javascript"></script>
+<script src="js/presentes.js" type="text/javascript"></script>
+
+
+<!-- css -->
+<link rel="stylesheet" type="text/css" media="" href="css/game.css" />
+<link rel="stylesheet" type="text/css" media="" href="css/bolas.css" />
+<link rel="stylesheet" type="text/css" media="" href="css/estrelas.css" />
+<link rel="stylesheet" type="text/css" media="" href="css/sinos.css" />
+<link rel="stylesheet" type="text/css" media="" href="css/lacos.css" />
+<link rel="stylesheet" type="text/css" media="" href="css/biscoitos.css" />
+<link rel="stylesheet" type="text/css" media="" href="css/gorros_meias.css" />
+<link rel="stylesheet" type="text/css" media="" href="css/presentes.css" />
+
+
+</head>
+
+
+
+<body bgcolor="#CCCCCC">
+
+<div id="cenario">
+<img src="img/cenario.png" width="800" height="600" />
+</div>
+
+<!-- audio event -->
+
+<p>
+<input type="text" id="audiofile" size="80" value="som/theme.ogg" />
+<input type="text" id="audiofile" size="80" value="som/theme.mp3" />
+</p>
+    
+<audio id="myaudio" autoplay="" loop>
+<source src="som/theme.ogg" type="audio/ogg">
+<source src="som/theme.mp3" type="audio/mpeg">
+audio not supported
+</audio>
+
+<div id="som_on">        
+<a href="#" onclick="playAudio();">
+<img src="img/play_btn.png" alt="stop" width="40" height="40"/>
+</a>
+</div>
+
+<div id="som_off">    
+<a href="#" onclick="restartAudio();">
+<img src="img/stop_btn.png" alt="stop" width="40" height="40"/>
+</a>
+</div>
+
+
+<!-- estrela events -->
+
+<div id="estrelas">
+<img src="img/estrelas/1.png" name="FigSlide3" width="40" height="40" />
+</div>
+
+<div id="estrelasarvore">
+<img src="img/estrelas/1_.png" name="FigSlide4" width="500" height="500" />
+</div>
+
+<div id="btn_esq_estrelas">				
+<a href="javascript:MostraSlide2(-1)">
+<img src="img/esquerda.png" width="25" height="25" />
+</a>
+</div>
+
+<div id="btn_dir_estrelas">
+<a href="javascript:MostraSlide2(1)" >
+<img src="img/direita.png" width="25" height="25" />
+</a>
+</div>
+
+
+<!-- bolas events -->
+
+<div id="bolas">
+  <img src="img/bolas/1.png" name="FigSlide" width="40" height="40" />
+</div>
+
+<div id="bolasarvore">
+<img src="img/bolas/1_.png" name="FigSlide2" width="500" height="500" />
+</div>
+
+<div id="btn_esq_bolas">				
+<a href="javascript:MostraSlide(-1)">
+<img src="img/esquerda.png" width="25" height="25" />
+</a>
+</div>
+
+<div id="btn_dir_bolas">
+<a href="javascript:MostraSlide(1)" >
+<img src="img/direita.png" width="25" height="25" />
+</a>
+</div>
+
+
+<!-- sinos events -->
+
+<div id="sinos">
+  <img src="img/sinos/1.png" name="FigSlide5" width="40" height="40" />
+</div>
+
+<div id="sinosarvore">
+<img src="img/sinos/1_.png" name="FigSlide6" width="500" height="500" />
+</div>
+
+<div id="btn_esq_sinos">				
+<a href="javascript:MostraSlide3(-1)">
+<img src="img/esquerda.png" width="25" height="25" />
+</a>
+</div>
+
+<div id="btn_dir_sinos">
+<a href="javascript:MostraSlide3(1)" >
+<img src="img/direita.png" width="25" height="25" />
+</a>
+</div>
+
+
+<!-- laços events -->
+
+<div id="lacos">
+  <img src="img/lacos/1.png" name="FigSlide7" width="40" height="40" />
+</div>
+
+<div id="lacosarvore">
+<img src="img/lacos/1_.png" name="FigSlide8" width="500" height="500" />
+</div>
+
+<div id="btn_esq_lacos">				
+<a href="javascript:MostraSlide4(-1)">
+<img src="img/esquerda.png" width="25" height="25" />
+</a>
+</div>
+
+<div id="btn_dir_lacos">
+<a href="javascript:MostraSlide4(1)" >
+<img src="img/direita.png" width="25" height="25" />
+</a>
+</div>
+
+
+<!-- biscoitos events -->
+
+<div id="biscoitos">
+  <img src="img/biscoitos/1.png" name="FigSlide9" width="40" height="40" />
+</div>
+
+<div id="biscoitosarvore">
+<img src="img/biscoitos/1_.png" name="FigSlide10" width="500" height="500" />
+</div>
+
+<div id="btn_esq_biscoitos">				
+<a href="javascript:MostraSlide5(-1)">
+<img src="img/esquerda.png" width="25" height="25" />
+</a>
+</div>
+
+<div id="btn_dir_biscoitos">
+<a href="javascript:MostraSlide5(1)" >
+<img src="img/direita.png" width="25" height="25" />
+</a>
+</div>
+
+
+<!-- gorros e meias events -->
+
+<div id="gorros_meias">
+  <img src="img/gorros_meias/1.png" name="FigSlide11" width="40" height="40" />
+</div>
+
+<div id="gorros_meiasarvore">
+<img src="img/gorros_meias/1_.png" name="FigSlide12" width="500" height="500" />
+</div>
+
+<div id="btn_esq_gorros_meias">				
+<a href="javascript:MostraSlide6(-1)">
+<img src="img/esquerda.png" width="25" height="25" />
+</a>
+</div>
+
+<div id="btn_dir_gorros_meias">
+<a href="javascript:MostraSlide6(1)" >
+<img src="img/direita.png" width="25" height="25" />
+</a>
+</div>
+
+
+<!-- presentes events -->
+
+<div id="presentes">
+  <img src="img/presentes/1.png" name="FigSlide13" width="40" height="40" />
+</div>
+
+<div id="presentesarvore">
+<img src="img/presentes/1_.png" name="FigSlide14" width="500" height="500" />
+</div>
+
+<div id="btn_esq_presentes">				
+<a href="javascript:MostraSlide7(-1)">
+<img src="img/esquerda.png" width="25" height="25" />
+</a>
+</div>
+
+<div id="btn_dir_presentes">
+<a href="javascript:MostraSlide7(1)" >
+<img src="img/direita.png" width="25" height="25" />
+</a>
+</div>
+
+
+<!-- download events -->
+
+<div id="download">
+<a href="#" onclick="window.print();return false;">
+<img src="img/download.png" alt="download" width="56" height="50"/>
+</a>	 
+</div>
+
+
+
+
+<!-- canvas -->
+
+<canvas id="canvas" width=200 height=40> se aparecer esta mensagem seu navegador<br/> não suporta HTML5, mude para um atualizado!</canvas>
+
+</body>
+</html>

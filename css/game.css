@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#cenario{
+position:absolute;	
+z-index = 1;
+margin-top: 0px;
+margin-left: 0px;
+}
+
+#myaudio{
+position:absolute;
+z-index = -1;
+margin-top: -100px;
+margin-left: 0px;
+width:5px;
+height:5px;
+}
+
+#som_on{
+position:absolute;
+z-index = 2;
+margin-top: -40px;
+margin-left: 620px;
+width:25px;
+height:25px;
+}
+
+#som_off{
+position:absolute;
+z-index = 2;
+margin-top: -40px;
+margin-left: 680px;
+width:25px;
+height:25px;
+}
+
+#download{
+position:absolute;
+left:105px;
+top:525px;
+z-index:3;
+}
+
+#flash{
+position:absolute;
+margin-top: -42.5px;
+margin-left: 560px;
+z-index:4;
+}
+	
+	

@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#gorros_meias
+{
+position:absolute;
+left:115px;
+top:415px;
+z-index:2;
+}
+
+#btn_dir_gorros_meias
+{
+position:absolute;
+left:165px;
+top:425px;
+z-index:2;
+}
+
+#btn_esq_gorros_meias
+{
+position:absolute;
+left:80px;
+top:425px;
+z-index:2;
+}
+
+#gorros_meiasarvore
+{
+position:absolute;
+left:230px;
+top:65px;
+z-index:2;
+}
+
